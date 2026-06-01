@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>InvestSim — Главный</title>
+    <!-- Preload nav images to prevent flash on tab switch -->
+    <link rel="preload" href="nav.jpg" as="image">
+    <link rel="preload" href="nav-history.jpg" as="image">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 
@@ -65,7 +68,7 @@
 
         .card {
             background: #fff;
-            border-radius: 18px;
+            border-radius: 22px;
             padding: 16px;
             box-shadow: 0 1px 8px rgba(0,0,0,0.06);
             overflow: hidden;
@@ -250,6 +253,9 @@
             top: 0; bottom: 0;
             width: 20%;
             display: block;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            user-select: none;
         }
         .nav-hit:nth-child(2) { left: 0%; }
         .nav-hit:nth-child(3) { left: 20%; }
@@ -273,7 +279,7 @@
             <div class="header-name">Артём <span class="arrow">›</span></div>
             <div class="header-sub">Альфа-Смарт</div>
         </div>
-        <button class="cashback-btn">🎁 Кэшбэк</button>
+        <a href="cashback.html" class="cashback-btn" style="text-decoration:none;">🎁 Кэшбэк</a>
     </div>
 
     <!-- Cards -->
@@ -328,8 +334,8 @@
 
     <!-- Scroll chevron -->
     <div class="scroll-hint">
-        <svg width="28" height="14" viewBox="0 0 28 14" fill="none">
-            <path d="M4 4l10 7 10-7" stroke="#c0c6d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="48" height="12" viewBox="0 0 48 12" fill="none">
+            <path d="M2 3l22 8 22-8" stroke="#c0c6d8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     </div>
 
