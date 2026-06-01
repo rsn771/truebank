@@ -55,6 +55,7 @@
             border-radius: 18px;
             padding: 16px 16px 14px;
             box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            margin-top: 20px;
         }
 
         .expenses-label { font-size: 14px; color: #8890a8; margin-bottom: 4px; }
@@ -69,15 +70,23 @@
         .expenses-arrow { color: #b0b6c8; font-size: 22px; line-height: 1; }
 
         .progress-bar {
-            height: 8px; border-radius: 6px;
-            display: flex; overflow: hidden; gap: 2px;
+            height: 14px; border-radius: 3px;
+            display: flex; overflow: hidden; gap: 0;
         }
 
-        .seg { height: 100%; border-radius: 2px; }
+        .seg { height: 100%; border-radius: 1px; }
+
+        /* ── Main white panel (below expenses card) ── */
+        .main-panel {
+            background: #fff;
+            border-radius: 0;
+            overflow: hidden;
+            padding-bottom: 20px;
+        }
 
         /* ── Filters ── */
         .filters {
-            padding: 0 16px 12px;
+            padding: 14px 16px 12px;
             display: flex; gap: 8px;
             overflow-x: auto; scrollbar-width: none;
         }
@@ -134,8 +143,8 @@
 
         /* ── Transaction group ── */
         .tx-group {
-            margin: 0 16px 2px;
-            border-radius: 16px;
+            margin: 0;
+            border-radius: 0;
             overflow: hidden;
             background: #fff;
         }
@@ -237,28 +246,11 @@
         </div>
     </div>
 
-    <!-- Filters -->
-    <div class="filters">
-        <button class="filter-check"></button>
-        <button class="filter-btn">Пополнение</button>
-        <button class="filter-btn">Списание</button>
-        <button class="filter-btn">Даты&nbsp;▾</button>
-        <button class="filter-btn">Счёт&nbsp;▾</button>
-    </div>
+    <!-- White panel: everything below expenses card -->
+    <div class="main-panel">
 
-    <!-- Notification -->
-    <div class="notification" id="notif">
-        <div class="notif-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                <rect width="36" height="36" rx="10" fill="#e3e7f8"/>
-                <path d="M18 9l7 3.5V20c0 4.5-7 9-7 9s-7-4.5-7-9v-7.5L18 9z" fill="#f97316"/>
-                <path d="M18 9l7 3.5V20c0 4.5-7 9-7 9" fill="#fdba74" opacity=".35"/>
-                <path d="M14.5 18.5l2.5 2.5 4.5-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </div>
-        <div class="notif-text">Подключите безопасный номер,&nbsp;чтобы усилить защиту своих денег</div>
-        <span class="notif-close" onclick="document.getElementById('notif').remove()">×</span>
-    </div>
+    <!-- Filters + Notification photo -->
+    <img src="filters.jpg" alt="Фильтры" style="width:100%; display:block;">
 
     <!-- Today -->
     <div class="date-label">Сегодня, 31 мая</div>
@@ -320,7 +312,8 @@
     </div>
 
     <!-- Yesterday -->
-    <div class="date-label" style="margin-top:14px;">Вчера, 30 мая</div>
+    <div style="height:1px;background:#f0f2f7;margin:4px 16px 0;"></div>
+    <div class="date-label" style="margin-top:0;">Вчера, 30 мая</div>
 
     <div class="tx-group">
         <div class="tx-item">
@@ -367,6 +360,8 @@
             <div class="tx-amount pos">+85 000 ₽</div>
         </div>
     </div>
+
+    </div><!-- /.main-panel -->
 
 </div>
 
